@@ -26,25 +26,8 @@ public class Professor {
     public Profdegree getDegree() {
         return degree;
     }
-    //3. setter
-	public void setProfId(long profId) {
-		this.profId = profId;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	public void setPersonCode(String personCode) {
-		this.personCode = personCode;
-	}
-	public void setDegree(Profdegree degree) {
-		this.degree = degree;
-	}
 
-   
-    
+    //3. setter
     //4.1 bezargumentu konstruktors
     //4.2 argumentu konstruktors
     //5. toString
