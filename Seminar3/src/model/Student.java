@@ -68,7 +68,13 @@ public class Student {
 		setPersonCode(inputPersonCode);
 	}
 	//5. toString funkcija
+	@Override
+	public String toString() {
+		String result = studId + ": " + name + " " + surname + " (" + personCode + ")";
+		return result;
+	}
 	//6. visas parejas funkcijas pec nepieciesibas
+	
 
 	
 }
