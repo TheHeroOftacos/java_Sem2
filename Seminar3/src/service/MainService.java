@@ -28,7 +28,7 @@ public class MainService {
 		System.out.println(course1);
 		Course 		course2   	= new Course("Physics", (byte) 14, prof2);
 		System.out.println(course2);
-		Course 		course3   	= new Course("Chemistry", (byte) 31, prof3);
+		Course 		course3   	= new Course("Chemistry chem", (byte) 31, prof3);
 		System.out.println(course3);
 
 		Grade 		grade1   	= new Grade(8, stud1, course1);

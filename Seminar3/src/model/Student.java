@@ -7,7 +7,7 @@ public class Student {
 	private String surname;
 	private String personCode;
 	//palig mainigais, kam nevajag ne set ne get
-	private static long counter = 0;
+	private static long counter =10000;
 	//2. get funkcija
 	public long getStudId() {
 		return studId;

@@ -6,7 +6,7 @@ public class Course {
     private byte credits;
     private Professor professor;
 
-    static long counter = 10000;
+    static long counter = 100000;
 
 
     public long getcourseId() {
@@ -61,7 +61,7 @@ public class Course {
 
     @Override
 	public String toString() {
-		String result = courseId + ": " + title + " (" + credits + " credits) - " + professor;
+		String result = courseId + ": " + title + " (" + credits + " credits) - " + professor.getName() + " " + professor.getSurname();
 		return result;
 	}
 }

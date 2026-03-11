@@ -10,7 +10,7 @@ public class Professor {
     private String personCode;
     private Profdegree degree;
 
-    static long counter = 10000;
+    static long counter = 0;
     //2. getter
     public long getProfId() {
         return profId;
