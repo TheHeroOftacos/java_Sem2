@@ -3,7 +3,7 @@ package model;
 public class Course {
     private long courseId;
     private String title;
-    private int credits;
+    private byte credits;
     private Professor professor;
 
     static long counter = 10000;
@@ -15,7 +15,7 @@ public class Course {
     public String getTitle() {
         return title;
     }
-    public int getCredits() {
+    public byte getCredits() {
         return credits;
     }
     public Professor getProfessor() {
@@ -35,12 +35,12 @@ public class Course {
         }
     }
 
-    public void setCredits(int inputCredits) {
-        if(inputCredits > 0 && inputCredits < 10) {
+    public void setCredits(byte inputCredits) {
+        if(inputCredits >= 1 && inputCredits <= 30) {
             credits = inputCredits;
         }
         else{
-            credits = 0;
+            credits = 1;
         }
     }
     public void setProfessor(Professor inputProfessor) {
@@ -52,7 +52,7 @@ public class Course {
         }
     }
 
-    public Course(String inputTitle, int inputCredits, Professor inputProfessor){
+    public Course(String inputTitle, byte inputCredits, Professor inputProfessor){
         setcourseId();
         setTitle(inputTitle);
         setCredits(inputCredits);
