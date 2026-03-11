@@ -1,6 +1,7 @@
 package service;
 
 import model.Course;
+import model.Grade;
 import model.Professor;
 import model.Student;
 import modelenum.Profdegree;
@@ -29,6 +30,13 @@ public class MainService {
 		System.out.println(course2);
 		Course 		course3   	= new Course("Chemistry", (byte) 31, prof3);
 		System.out.println(course3);
+
+		Grade 		grade1   	= new Grade(8, stud1, course1);
+		System.out.println(grade1);
+		Grade 		grade2   	= new Grade(9, stud2, course2);
+		System.out.println(grade2);
+		Grade 		grade3   	= new Grade(7, stud3, course3);
+		System.out.println(grade3);
 
 	}
 

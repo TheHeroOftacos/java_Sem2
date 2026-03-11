@@ -22,10 +22,10 @@ public class Course {
         return professor;
     }
 
+
     public void setcourseId() {
         courseId = ++counter;
     }
-
     public void setTitle(String inputTitle) {
         if((inputTitle != null) && (!inputTitle.isEmpty()) && (inputTitle.matches("[A-Z][a-z]{2,15}([ ][A-Z][a-z]{2,15})?"))) {
             title = inputTitle;
