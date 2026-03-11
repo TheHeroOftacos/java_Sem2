@@ -1,9 +1,9 @@
 package model;
 
 public class Person {
-    private String name;
-	private String surname;
-	private String personCode;
+    protected  String name;
+	protected  String surname;
+	protected  String personCode;
 
     public String getName() {
 		return name;
@@ -52,9 +52,4 @@ public class Person {
 		setPersonCode(inputPersonCode);
 	}
 
-    @Override
-	public String toString() {
-		String result =name + " " + surname + " (" + personCode + ")";
-		return result;
-	}
 }

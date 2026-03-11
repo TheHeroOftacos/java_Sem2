@@ -1,76 +1,37 @@
 package model;
 //modelu klase
-public class Student {
+public class Student extends Person {
 	//1. mainigie
 	private long studId;
-	private String name;
-	private String surname;
-	private String personCode;
+
 	//palig mainigais, kam nevajag ne set ne get
 	private static long counter =10000;
 	//2. get funkcija
 	public long getStudId() {
 		return studId;
 	}
-	public String getName() {
-		return name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public String getPersonCode() {
-		return personCode;
-	}
+
 	//3. set funkcija
 	public void setStudId(){
 		studId = counter;
 		counter++;
 
 	}
-	public void setName(String inputName) {
-		if((inputName != null) && (!inputName.isEmpty()) && (inputName.matches("[A-Z][a-z]{2,15}([ ][A-Z][a-z]{2,15})?"))) {
-			name = inputName;
-		}
-		else{
-			name = "Unknown";
-		}
-	}
-	public void setSurname(String inputSurname) {
-		if((inputSurname != null) && (!inputSurname.isEmpty()) && (inputSurname.matches("[A-Z]{1}[a-z]{2,15}([-]{1}[A-Z]{1}[a-z]{2,15})?"))) {
-			surname = inputSurname;
-		}
-		else{
-			surname = "Unknown";
-		}
-	}
-	public void setPersonCode(String inputPersonCode) {
-		if((inputPersonCode != null) && (!inputPersonCode.isEmpty()) && (inputPersonCode.matches("[0-9]{6}[-]{1}[0-9]{5}"))) {
-			personCode = inputPersonCode;
-		}
-		else{
-			personCode = "Unknown";
-		}
-	}
-
 
 	//4.1 bezargumentu konstruktors
 	public Student(){
+		super(); //izsauc autoo person() construct
 		setStudId();
-		setName("Janis");
-		setSurname("Berzins");
-		setPersonCode("123456-12345");
 	}
 	//4.2 argumentiem konstruktors
 	public Student(String inputName, String inputSurname, String inputPersonCode){
+		super(inputName, inputSurname, inputPersonCode); //izsauc auto person() construct ar argumentiem
 		setStudId();
-		setName(inputName);
-		setSurname(inputSurname);
-		setPersonCode(inputPersonCode);
 	}
 	//5. toString funkcija
 	@Override
 	public String toString() {
-		String result = studId + ": " + name + " " + surname + " (" + personCode + ")";
+		String result = studId +": " + name + " " + surname + " (" + personCode + ")";
 		return result;
 	}
 	//6. visas parejas funkcijas pec nepieciesibas

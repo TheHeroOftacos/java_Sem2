@@ -19,9 +19,9 @@ public class MainService {
 		
 		Professor 		prof1   	= new Professor();
 		System.out.println(prof1);
-		Professor 		prof2   	= new Professor("Rendijs", "Berzins-Kalnins", "010101-12345", Profdegree.phd);
+		Professor 		prof2   	= new Professor("Maris", "Berzins", "010101-12345", Profdegree.phd);
 		System.out.println(prof2);
-		Professor 		prof3   	= new Professor("123s56", "Ber2ins", null, Profdegree.other);
+		Professor 		prof3   	= new Professor("123s56", "Kalnins", null, Profdegree.other);
 		System.out.println(prof3);
 
 		Course 		course1   	= new Course("Mathematics", (byte) 3, prof1);
