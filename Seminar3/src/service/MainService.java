@@ -1,5 +1,8 @@
 package service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import model.Course;
 import model.Grade;
 import model.Professor;
@@ -8,36 +11,63 @@ import modelenum.Profdegree;
 
 public class MainService {
 
+	private static ArrayList<Student> allstudents = new ArrayList<Student>();
+	private static ArrayList<Professor> allprofessors = new ArrayList<Professor>();
+	private static ArrayList<Course> allcourses = new ArrayList<Course>();
+	private static ArrayList<Grade> allgrades = new ArrayList<Grade>();
+
 	public static void main(String[] args) {
 		//datu tips 	nosaukums   =new konstruktors();
 		Student   		stud1   	= new Student();
-		System.out.println(stud1);
 		Student   		stud2   	= new Student("Rendijs", "Berzins-Kalnins", "010101-12345");
-		System.out.println(stud2);
 		Student   		stud3   	= new Student("123456", "Ber2ins", null);
-		System.out.println(stud3);
-		
+		allstudents.addAll(Arrays.asList(stud1, stud2, stud3));
+		System.out.println(allstudents);
+
 		Professor 		prof1   	= new Professor();
-		System.out.println(prof1);
 		Professor 		prof2   	= new Professor("Maris", "Berzins", "010101-12345", Profdegree.phd);
-		System.out.println(prof2);
 		Professor 		prof3   	= new Professor("123s56", "Kalnins", null, Profdegree.other);
-		System.out.println(prof3);
+		allprofessors.addAll(Arrays.asList(prof1, prof2, prof3));
+
+		System.out.println(allprofessors);
 
 		Course 		course1   	= new Course("Mathematics", (byte) 3, prof1);
-		System.out.println(course1);
 		Course 		course2   	= new Course("Physics", (byte) 14, prof2);
-		System.out.println(course2);
 		Course 		course3   	= new Course("Chemistry chem", (byte) 31, prof3);
-		System.out.println(course3);
+		allcourses.addAll(Arrays.asList(course1, course2, course3));
+		System.out.println(allcourses);
 
 		Grade 		grade1   	= new Grade(8, stud1, course1);
-		System.out.println(grade1);
 		Grade 		grade2   	= new Grade(9, stud2, course2);
-		System.out.println(grade2);
 		Grade 		grade3   	= new Grade(7, stud3, course3);
-		System.out.println(grade3);
+		allgrades.addAll(Arrays.asList(grade1, grade2, grade3));
+		System.out.println(allgrades);
 
 	}
 
+
+	//CRUD C - create R - retrieve U - update D - delete
+	//C - create student
+	public void createStudent(String inputName, String inputSurname, String inputPersonCode) throws Exception {
+		//TODO parbaudit ienakosos parametrus
+		for(Student tempS : allstudents){
+			if(tempS.getPersonCode().equals(inputPersonCode)){
+				throw new Exception("Tads students jau eksiste");
+			}
+		}
+		Student newStudent = new Student(inputName, inputSurname, inputPersonCode);
+		allstudents.add(newStudent);
+	}
+
+	//R - retrieve student
+	public static Student getStudentById(long id) throws Exception {
+		if(id < 0){
+			throw new Exception("Id nevar but mazaks par 0");
+		}
+		for(Student tempS : allstudents){
+			if(tempS.getStudId() == id){
+				return tempS;
+			}
+		}
+	}
 }
