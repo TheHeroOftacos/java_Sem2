@@ -40,5 +40,21 @@ public class Person {
 		}
 	}
 
+    public Person(){
+		setName("Janis");
+		setSurname("Berzins");
+		setPersonCode("123456-12345");
+	}
 
+    public Person(String inputName, String inputSurname, String inputPersonCode){
+		setName(inputName);
+		setSurname(inputSurname);
+		setPersonCode(inputPersonCode);
+	}
+
+    @Override
+	public String toString() {
+		String result =name + " " + surname + " (" + personCode + ")";
+		return result;
+	}
 }
