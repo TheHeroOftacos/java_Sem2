@@ -69,5 +69,26 @@ public class MainService {
 				return tempS;
 			}
 		}
+		throw new Exception("Students ar id " + id + " netika atrasts");
 	}
+	//U - update student
+	public static Student updateById(int id, String inputName, String inputSurname) throws Exception {
+		Student studentForUpdating = getStudentById(id);
+
+		//todo pabaudit unputname un inputsurname
+		if(!studentForUpdating.getName().equals(inputName)){
+			studentForUpdating.setName(inputName);
+		}
+		if(!studentForUpdating.getSurname().equals(inputSurname)){
+			studentForUpdating.setSurname(inputSurname);
+		}
+		return studentForUpdating;
+
+	}
+	//D - delete student
+	public static void deleteById(int id) throws Exception {
+		Student studentForDeleting = getStudentById(id);
+		allstudents.remove(studentForDeleting);
+	}
+
 }
